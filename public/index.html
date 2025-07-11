@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nouman aziz | Full stack web and data science</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Nouman aziz</h1>
+            <nav class="nav" id="nav" style="display: flex;">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="auth">Signin</a></li>
+                </ul>
+            </nav>
+            <div class="icon">
+                <span class="material-icons" id="close">close</span>
+                <i class="material-icons" id="open">&#xe896;</i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>Hi, I'm Nouman Aziz</h2>
+            <h3 id="typewriter">Data Scientist & Full Stack Web Developer</h3>
+            <p>
+                I'm a passionate tech enthusiast with a solid foundation in data science and machine learning. I enjoy
+                uncovering patterns in complex datasets and transforming raw data into meaningful insights that drive
+                smarter decisions.
+            </p>
+            <p>
+                A dedicated full stack developer with strong backend and frontend skills,
+                committed to building robust and scalable applications.
+            </p>
+
+            <div class="buttons">
+                <a href="#" class="btn" onclick="downloadCV()">Download cv</a>
+                <a href="contact" class="btn outline">Let's Talk</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="noumi.jpg" alt="nouman aziz">
+        </div>
+    </section>
+    <section class="about" id="about">
+        <h2>About Me</h2>
+        <div class="container">
+            <div class="left">
+                <p>
+                    I’m Nouman Aziz — a dedicated full stack developer with strong backend and frontend skills,
+                    committed to building robust and scalable applications.
+                </p>
+            </div>
+            <div class="right">
+                <p>
+                    From exploring and preprocessing data to training machine learning models and evaluating
+                    performance, I handle the full data science workflow.
+                </p>
+                <p>
+                    I enjoy working with technologies like Python, Pandas, Scikit-learn, TensorFlow, and Jupyter to turn
+                    raw data into intelligent, impactful solutions.
+                </p>
+
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h1>My Services</h1>
+        <div class="container" id="service-sec">
+            <div class="service">
+                <h2>Data Science & Machine Learning</h2>
+                <p>
+                    I offer end-to-end data science solutions, from data cleaning and exploration to building predictive
+                    machine learning models
+                    My services include model deployment dashboard creation statistical analysis and custom algorithm
+                    development using tools like Python Pandas scikit-learn and TensorFlow
+                </p>
+            </div>
+
+            <div class="service">
+                <h2>Data Visualization & Reporting</h2>
+                <p>
+                    I help businesses uncover insights through compelling visualizations using Matplotlib Seaborn
+                    Plotly and Power BI
+                    I build dashboards and automated reporting systems that translate complex datasets into actionable
+                    decisions
+                </p>
+            </div>
+
+            <div class="service">
+                <h2>Full Stack Web Development</h2>
+                <p>
+                    I design and develop modern scalable web applications using the MERN stack (MongoDB Express
+                    React Node.js)
+                    From responsive front-end interfaces to robust back-end APIs I deliver complete web solutions
+                    tailored to your business needs.
+                </p>
+            </div>
+
+            <div class="service">
+                <h2>API Development & Integration</h2>
+                <p>
+                    I build secure scalable RESTful APIs and integrate third-party services into your app Whether it's
+                    user authentication payment systems I ensure smooth and secure communication
+                    between components
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="container project-grid">
+
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>A data visualization dashboard using Python, Pandas, and Plotly for real-time analytics.</p>
+                <a href="#" class="btn outline">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>A full-stack MERN blog application with user auth, post editor, and comment features.</p>
+                <a href="#" class="btn outline">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Three</h3>
+                <p>Machine learning model to predict house prices using Scikit-learn and deployed with Flask.</p>
+                <a href="#" class="btn outline">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Four</h3>
+                <p>Portfolio website built with HTML, CSS, JavaScript, and Express backend integration.</p>
+                <a href="#" class="btn outline">View Project</a>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+<script>
+    function downloadCV() {
+        const link = document.createElement('a');
+        link.href = 'cv.pdf';
+        link.download = 'Nouman_CV.pdf';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+
+        // Try direct download
+        try {
+            link.click();
+        } catch (err) {
+            // Fallback: open in new tab
+            window.open('cv.pdf', '_blank');
+        }
+
+        document.body.removeChild(link);
+    }
+</script>
+
+
+<script src="script.js"></script>
+
+</html>

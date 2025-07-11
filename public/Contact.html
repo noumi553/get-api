@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Talk - Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #0d1b2a;
+        }
+
+        .contact-section {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px 30px;
+            background: #f1f3f5;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2.2rem;
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            background-color: #ffffff;
+            color: #0d1b2a;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #6c757d;
+        }
+
+        .contact-form button {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #005f8e;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .contact-section {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+
+            .contact-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-section p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 0.95rem;
+                padding: 12px;
+            }
+
+            .contact-form button {
+                width: 100%;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contact-section">
+        <h2>Let's Talk</h2>
+        <p>If you're looking for a web development or data science project, feel free to contact me. I'm open to
+            collaborations and freelance work!</p>
+        <form class="contact-form" method="post" action="/post">
+            <input type="text" placeholder="Your Name" required name="name" />
+            <input type="email" placeholder="Your Email" required name="email" />
+            <textarea rows="5" placeholder="Your Message" required name="message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+
+</html>
