@@ -1,10 +1,15 @@
 {
   "home": "https://github.com/noumi553/get-api",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "cookies-parser": "^1.2.0",
     "dotenv": "^17.2.0",
     "env": "^0.0.2",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.17.0",
     "mongoose": "^8.16.2",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "uuid": "^11.1.0"
   }
 }

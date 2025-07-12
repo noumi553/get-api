@@ -16,6 +16,5 @@ const schemaModel = new mongoose.Schema({
     }
 })
 
-const model = mongoose.model('auth', schemaModel)
-
-module.exports = model
+const models = mongoose.model('auth', schemaModel)
+module.exports = models

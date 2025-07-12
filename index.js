@@ -4,8 +4,12 @@ const connectDataBase = require('./backend/connectMDB')
 const contact = require('./backend/contact')
 const auth = require('./backend/auth')
 const postAuth = require('./backend/postAuth')
+const login = require('./backend/login')
+const contactMessage = require('./backend/contectMe')
+const {midelware} = require('./backend/midelware')
+const cookieParser = require('cookie-parser')
+const profileData = require('./backend/profileData')
 require("dotenv").config()
-const path = require('path')
 app = express()
 
 const url = process.env.MONGO_URL
@@ -14,14 +18,18 @@ connectDataBase(url).then(()=>{console.log('mongoose data base is connected')}).
 app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(cookieParser())
 
 //api keys
+app.use('/login',login)
 app.use('/signup',postAuth)
+app.use('/contacts',contactMessage)
+app.use('/profile',profileData)
 
 
 //routes
 app.use('/',home)
-app.use('/contact',contact)
+app.use('/contact',midelware,contact)
 app.use('/auth',auth)
 
 app.get('/api',(req,res)=>{

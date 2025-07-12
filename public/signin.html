@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auth | My Website</title>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -25,7 +29,7 @@
 
         .wrapper {
             width: 320px;
-            height: 460px;
+            height: 480px;
             perspective: 1000px;
         }
 
@@ -63,9 +67,17 @@
             margin-bottom: 20px;
         }
 
+        .input-box i.material-icons {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            font-size: 20px;
+            color: #888;
+        }
+
         .input-box input {
             width: 100%;
-            padding: 10px;
+            padding: 10px 10px 10px 30px;
             background: transparent;
             border: none;
             border-bottom: 2px solid #bbb;
@@ -77,7 +89,7 @@
         .input-box label {
             position: absolute;
             top: 10px;
-            left: 0;
+            left: 30px;
             color: #888;
             pointer-events: none;
             transition: 0.3s;
@@ -121,7 +133,6 @@
             text-decoration: underline;
         }
 
-        /* Flip the back face */
         .signup-box {
             transform: rotateY(180deg);
         }
@@ -129,7 +140,7 @@
         @media (max-width: 400px) {
             .wrapper {
                 width: 90%;
-                height: 480px;
+                height: 500px;
             }
 
             .btn {
@@ -153,10 +164,12 @@
                 <form method="post" action="/login">
                     <h2>Sign In</h2>
                     <div class="input-box">
+                        <i class="material-icons">email</i>
                         <input type="email" name="email" required />
                         <label>Email</label>
                     </div>
                     <div class="input-box">
+                        <i class="material-icons">lock</i>
                         <input type="password" name="password" required />
                         <label>Password</label>
                     </div>
@@ -170,14 +183,17 @@
                 <form method="post" action="/signup">
                     <h2>Sign Up</h2>
                     <div class="input-box">
+                        <i class="material-icons">person</i>
                         <input type="text" name="name" required />
                         <label>Full Name</label>
                     </div>
                     <div class="input-box">
+                        <i class="material-icons">email</i>
                         <input type="email" name="email" required />
                         <label>Email</label>
                     </div>
                     <div class="input-box">
+                        <i class="material-icons">lock</i>
                         <input type="password" name="password" required />
                         <label>Password</label>
                     </div>

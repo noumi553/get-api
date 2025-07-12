@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const model = require('./authSchema');
+const models = require('./authSchema');
 
 const postAuth = express.Router();
 
@@ -8,19 +8,18 @@ postAuth.post('/', async (req, res) => {
     try {
         const { name, email, password } = req.body;
 
-        // Validate required fields
         if (!name || !email || !password) {
-            return res.status(400).send("Please fill in all required fields.");
+            return res.send("Please fill in all required fields.");
         }
 
-        // Check if user already exists (optional but recommended)
-        const existingUser = await model.findOne({ email });
+        // Check if email already exists
+        const existingUser = await models.findOne({ email: email });
         if (existingUser) {
-            return res.status(409).send("User with this email already exists.");
+            return res.send("Email is already registered.");
         }
 
-        // Create the user
-        await model.create({ name, email, password });
+        // Create new user
+        await models.create({ name, email, password });
 
         // Redirect or serve sign-in page
         return res.sendFile(path.resolve(__dirname, '../public', 'signin.html'));
