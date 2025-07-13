@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Let's Talk - Contact</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
             background-color: #ffffff;
             color: #0d1b2a;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
 
         .contact-section {
             max-width: 600px;
-            margin: 80px auto;
+            margin: 60px auto;
             padding: 40px 30px;
             background: #f1f3f5;
             border-radius: 12px;
@@ -33,13 +48,13 @@
         .contact-section p {
             font-size: 1rem;
             margin-bottom: 30px;
-            color: #333333;
+            color: #444;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 14px;
+            padding: 14px 16px;
             margin-bottom: 20px;
             border: 1px solid #ced4da;
             background-color: #ffffff;
@@ -47,12 +62,12 @@
             border-radius: 8px;
             font-size: 1rem;
             resize: none;
-            box-sizing: border-box;
         }
 
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: #6c757d;
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #0077b6;
+            outline: none;
         }
 
         .contact-form button {
@@ -63,14 +78,30 @@
             border-radius: 8px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s ease;
+            margin-bottom: 20px;
         }
 
         .contact-form button:hover {
             background-color: #005f8e;
         }
 
-        /* Responsive styles */
+        .logout-form button {
+            background-color: #e63946;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .logout-form button:hover {
+            background-color: #cc0000;
+        }
+
         @media (max-width: 768px) {
             .contact-section {
                 margin: 40px 20px;
@@ -79,10 +110,6 @@
 
             .contact-section h2 {
                 font-size: 1.8rem;
-            }
-
-            .contact-section p {
-                font-size: 0.95rem;
             }
         }
 
@@ -94,7 +121,8 @@
                 padding: 12px;
             }
 
-            .contact-form button {
+            .contact-form button,
+            .logout-form button {
                 width: 100%;
                 padding: 14px;
             }
@@ -103,17 +131,24 @@
 </head>
 
 <body>
+
     <section class="contact-section">
         <h2>Let's Talk</h2>
         <p>If you're looking for a web development or data science project, feel free to contact me. I'm open to
             collaborations and freelance work!</p>
+
         <form class="contact-form" method="post" action="/contacts">
             <input type="text" placeholder="Your Name" required name="name" />
             <input type="email" placeholder="Your Email" required name="email" />
             <textarea rows="5" placeholder="Your Message" required name="message"></textarea>
             <button type="submit">Send Message</button>
         </form>
+
+        <form method="post" action="/logout" class="logout-form">
+            <button type="submit">Logout</button>
+        </form>
     </section>
+
 </body>
 
 </html>
