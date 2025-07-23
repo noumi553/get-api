@@ -10,6 +10,3 @@ Welcome to my personal portfolio repository! This is where I showcase my skills,
 - [Styling] - Tailwind CSS / Bootstrap / Sass / CSS Modules
 - [Deployment] - Vercel / Netlify / GitHub Pages
 - [Version Control] - Git & GitHub
-
-## 📁 Folder Structure
-
