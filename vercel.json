@@ -3,11 +3,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "index.js"
-    },
-    {
-      "source": "(.*)",
-      "destination": "public/$1"
+      "destination": "/index.js"
     }
   ]
 }
