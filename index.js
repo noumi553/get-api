@@ -10,7 +10,7 @@ const { midelware } = require('./backend/midelware');
 const cookieParser = require('cookie-parser');
 const logout = require('./backend/logout');
 require("dotenv").config();
-app = express();
+const app = express();
 
 const url = process.env.MONGO_URL
 connectDataBase(url).then(() => { console.log('mongoose data base is connected') }).catch((error) => { console.log(error) })
